@@ -1,0 +1,8 @@
+ignite:
+  instance-name: myIgniteInstance
+  client-mode: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
