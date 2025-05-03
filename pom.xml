@@ -41,6 +41,8 @@
 	</properties>
 	<dependencies>
 
+
+
 		<dependency>
 			<groupId>org.apache.ignite</groupId>
 			<artifactId>ignite-core</artifactId>
@@ -74,11 +76,11 @@
 
 
 		<!-- Optional: SLF4J logging bridge -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.ignite</groupId>
 			<artifactId>ignite-slf4j</artifactId>
 			<version>${ignite-slf4j.version}</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- Optional: JCache API (required for standard javax.cache interfaces) -->
 		<!-- <dependency>

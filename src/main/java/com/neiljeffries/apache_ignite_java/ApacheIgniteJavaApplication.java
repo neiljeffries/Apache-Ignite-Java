@@ -39,8 +39,10 @@ public class ApacheIgniteJavaApplication {
         // Read the configuration file as a String
         // String configStr = Files.readString(Path.of(igniteConfigPath));
 
+
         // Start Ignite node with the configuration file
         IgniteServer.start(nodeName, Path.of(igniteConfigPath), Path.of(igniteWorkPath));
+        
 
         // Start embedded Ignite node
         // Ignite ignite = IgnitionManager.start(nodeName, configStr,

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.neiljeffries.apache_ignite_java.ApacheIgniteJavaApplication;
+import com.neiljeffries.apache_ignite_java.services.TryIgniteService;
 // import com.neiljeffries.apache_ignite_java.services.GreetingService;
 
 @RestController
@@ -16,9 +17,11 @@ import com.neiljeffries.apache_ignite_java.ApacheIgniteJavaApplication;
 public class GreetingController {
 
     private final ApacheIgniteJavaApplication app;
+    private final TryIgniteService tryIgniteService;
 
-    public GreetingController(ApacheIgniteJavaApplication app) {
+    public GreetingController(ApacheIgniteJavaApplication app, TryIgniteService tryIgniteService) {
         this.app = app;
+        this.tryIgniteService = tryIgniteService;
     }
 
     @PostMapping("/{id}")
@@ -26,9 +29,14 @@ public class GreetingController {
         app.putCache(id, value);
         return "Stored";
     }
-    
+
     @GetMapping("/{id}")
     public String get(@PathVariable Long id) {
         return app.getCache(id);
+    }
+
+    @GetMapping("/try")
+    public String get() {
+        return tryIgniteService.tryIgnite();
     }
 }
